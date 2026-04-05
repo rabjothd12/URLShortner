@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Short URL</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #43cea2, #185a9d);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            width: 400px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        a {
+            display: block;
+            margin: 15px 0;
+            color: #667eea;
+            font-weight: bold;
+            text-decoration: none;
+            word-break: break-all;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background: #5a67d8;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>✅ Your Short URL</h2>
+
+        <a href="<%= shortUrl %>" target="_blank">
+            <%= shortUrl %>
+        </a>
+
+        <a href="/" class="btn">Create Another</a>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Analytics</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            width: 500px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+        }
+
+        .clicks {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        li {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+            font-size: 14px;
+        }
+
+        .btn {
+            margin-top: 15px;
+            display: inline-block;
+            padding: 10px 20px;
+            background: #ff7e5f;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background: #e76a4c;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>📊 Analytics</h2>
+
+    <div class="clicks">
+        Total Clicks: <strong><%= totalClicks %></strong>
+    </div>
+
+    <ul>
+        <% analytics.forEach(item => { %>
+            <li>
+                <%= new Date(item.timestamp).toLocaleString() %>
+            </li>
+        <% }) %>
+    </ul>
+    <a href="/analytics/<%= shortUrl.split('/').pop() %>" class="btn">
+    View Analytics 📊
+</a>
+
+    <a href="/" class="btn">⬅ Back</a>
+</div>
+
+</body>
+</html>
