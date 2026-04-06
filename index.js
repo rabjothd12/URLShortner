@@ -51,10 +51,12 @@ app.get("/:shortId", async (req, res) => {
     }
 });
 
-const PORT = 8000;
-
 // connect DB 
-connectDB("mongodb://127.0.0.1:27017/short-url")
+require("dotenv").config();
+
+const PORT = process.env.PORT || 8000;
+
+connectDB(process.env.MONGO_URL)
 .then(() => {
     console.log("Connected to DB");
 
